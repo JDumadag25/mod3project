@@ -12,5 +12,6 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-secrets.yml
+ secrets.yml
+/backend/googleapikey.txt
 .byebug_history
