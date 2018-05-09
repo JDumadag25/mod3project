@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   <style>
 
 body {
@@ -53,6 +53,7 @@ p {
 #checkboxes{
   text-align: center;
   background: rgba(255,255,255,0.5);
+  display: none;
 
 }
 
@@ -74,6 +75,7 @@ p {
     width: 1000px;
     /*background-color: #ffcc33;*/
     margin: auto;
+    display: none;
 }
 
 #firstbox {
@@ -81,6 +83,7 @@ p {
     float: left;
     height: 540px;
     background: rgba(255,255,255,0.5);
+    overflow: auto;
 }
 
 #secondbox {
@@ -88,6 +91,7 @@ p {
     float: right;
     height: 540px;
     background: rgba(255,255,255,0.5);
+    overflow: auto;
 
 }
 
@@ -111,8 +115,10 @@ p {
   <h1>(APP NAME IN PROGRESS)</h1>
   <p>Please enter your Zip Code to see what events are going on in your area.</p>
     <div class="search-bar">
-      <input type="text" id="search" placeholder="Enter Zip code"><br>
-      <button class="button" type="button">SUBMIT</button>
+      <form id="zipcode">
+        <input type="text" id="search" placeholder="Enter Zip code"><br>
+        <button id="submit_button" class="button" type="button">SUBMIT</button>
+      </form>
     </div>
 </div>
 
@@ -160,5 +166,27 @@ p {
   </div>
 
 </div>
+
+<script>
+// function showContainer() {
+//     let x = document.getElementById("container");
+//      if (x.style.display === "none") {
+//         x.style.display = "block";
+//       } else {
+//         x.style.display = "none";
+//       }
+// }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $('#submit_button').on('click', function(){
+      $('#container, #checkboxes').fadeIn(1200);
+    });
+  })
+</script>
+<!-- <script src="index.js"></script> -->
 </body>
 </html>

@@ -8,6 +8,8 @@ require 'Pry'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 apikey = File.open("backend/googleapikey.txt", "r").first
+search =
 
-places = RestClient.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=#{apikey}"
+places = RestClient.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{search}=#{apikey}"
+binding.pry
 places_hash = JSON.parse(places)
