@@ -103,6 +103,18 @@ p {
   text-align: center
 }
 
+/* Always set the map height explicitly to define the size of the div
+      * element that contains the map. */
+ #map {
+   height: 50%;
+ }
+ /* Optional: Makes the sample page fill the window. */
+ html, body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }
+
 </style>
 
 
@@ -165,7 +177,13 @@ p {
       </ul>
   </div>
 
+<div id="map"></div>
+
 </div>
+
+
+
+
 
 <script>
 // function showContainer() {
@@ -176,10 +194,26 @@ p {
 //         x.style.display = "none";
 //       }
 // }
+function initMap() {
+        var myLatLng = {lat: -25.363, lng: 131.044};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap">
+    </script>
 <script>
   $(document).ready(function(){
     $('#submit_button').on('click', function(){
